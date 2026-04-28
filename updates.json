@@ -1,0 +1,18 @@
+{
+  "addons": {
+    "omnireply@omniscriptum.com": {
+      "updates": [
+        {
+          "version": "4.0.7",
+          "update_link": "https://davidbenwow.github.io/omnireply-updates/omnireply-4.0.7.xpi",
+          "update_hash": "sha256:93de613dc945f647007ca7ba7e1dc68da6d5d406a3401fa6ef66c80e300e028c",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "140.0"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
