@@ -64,7 +64,6 @@
       .quick-card,
       .note,
       .step,
-      .mini-shot,
       .screenshot {
         background: var(--panel);
         border: 1px solid var(--border);
@@ -271,10 +270,24 @@
         font-size: 0.92em;
       }
 
+      .screenshot-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
       .screenshot {
-        max-width: 360px;
+        margin: 0;
         overflow: hidden;
-        background: var(--panel-soft);
+        background: #ffffff;
+      }
+
+      .screenshot.compact {
+        max-width: 390px;
+      }
+
+      .screenshot.wide {
+        max-width: 100%;
       }
 
       .screenshot img {
@@ -284,105 +297,12 @@
       }
 
       .caption {
-        margin-top: -2px;
-        color: var(--muted);
-        font-size: 0.88rem;
-      }
-
-      .mini-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .mini-shot {
-        min-height: 92px;
-        overflow: hidden;
-        background: #fbfcfd;
-      }
-
-      .mini-bar {
-        display: flex;
-        gap: 7px;
-        align-items: center;
-        min-height: 28px;
-        padding: 0 10px;
-        border-bottom: 1px solid var(--border);
-        color: var(--muted);
-        font-size: 0.82rem;
-      }
-
-      .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #c4ccd8;
-      }
-
-      .dot.red {
-        background: #ff5f57;
-      }
-
-      .dot.yellow {
-        background: #ffbd2e;
-      }
-
-      .dot.green {
-        background: #28c840;
-      }
-
-      .mini-content {
-        display: grid;
-        gap: 8px;
-        padding: 12px;
-      }
-
-      .fake-menu,
-      .fake-field,
-      .fake-row,
-      .fake-button {
-        border-radius: 6px;
-      }
-
-      .fake-menu {
-        background: #e8f0ff;
-        color: #1b4f9c;
-        padding: 7px 9px;
-        font-weight: 700;
-      }
-
-      .fake-field {
-        border: 1px solid var(--border-strong);
-        background: var(--panel);
+        margin: 0;
         padding: 8px 10px;
-        color: var(--text);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        border-top: 1px solid var(--border);
+        background: var(--panel-soft);
+        color: var(--muted);
         font-size: 0.82rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .fake-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 14px;
-        background: #d8e8fb;
-        padding: 9px 10px;
-        color: var(--text);
-        font-size: 0.88rem;
-      }
-
-      .fake-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: max-content;
-        min-height: 34px;
-        padding: 0 12px;
-        background: var(--accent);
-        color: #ffffff;
-        font-weight: 700;
       }
 
       .final-card {
@@ -423,7 +343,7 @@
           grid-template-columns: 1fr;
         }
 
-        .mini-grid {
+        .screenshot-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -490,16 +410,6 @@
             <div class="step-body">
               <h3>Download the extension file</h3>
               <p>Click <strong>Download OmniReply</strong>. Keep the downloaded XPI file available for the install step.</p>
-              <div class="mini-shot" aria-hidden="true">
-                <div class="mini-bar">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span>Download</span>
-                </div>
-                <div class="mini-content">
-                  <div class="fake-button">Download OmniReply</div>
-                  <div class="fake-field">omnireply-latest.xpi</div>
-                </div>
-              </div>
             </div>
           </article>
 
@@ -508,10 +418,10 @@
             <div class="step-body">
               <h3>Copy your V4 API key</h3>
               <p>Open <a href="https://v4.vdm-vsg.de/">v4.vdm-vsg.de</a>, go to <strong>Account</strong>, and copy the API key below your signatures.</p>
-              <div class="screenshot">
+              <figure class="screenshot compact">
                 <img src="./assets/v4-api-key.png" alt="V4 account page showing the API key below the signature area.">
-              </div>
-              <p class="caption">The key is on the Account page, just below the signature area.</p>
+                <figcaption class="caption">The key is on the Account page, just below the signature area.</figcaption>
+              </figure>
             </div>
           </article>
 
@@ -524,24 +434,15 @@
                 <li>Choose <strong>General</strong>.</li>
                 <li>Scroll all the way down and click <strong>Config Editor</strong>.</li>
               </ul>
-              <div class="mini-grid" aria-hidden="true">
-                <div class="mini-shot">
-                  <div class="mini-bar">
-                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <span>Thunderbird</span>
-                  </div>
-                  <div class="mini-content">
-                    <div class="fake-menu">Settings</div>
-                    <div class="fake-field">General</div>
-                  </div>
-                </div>
-                <div class="mini-shot">
-                  <div class="mini-bar">General</div>
-                  <div class="mini-content">
-                    <div class="fake-field">Disk Space</div>
-                    <div class="fake-button">Config Editor...</div>
-                  </div>
-                </div>
+              <div class="screenshot-grid">
+                <figure class="screenshot">
+                  <img src="./assets/thunderbird-settings-menu.png" alt="Thunderbird application menu with Settings highlighted.">
+                  <figcaption class="caption">Open Thunderbird Settings.</figcaption>
+                </figure>
+                <figure class="screenshot">
+                  <img src="./assets/general-config-editor.png" alt="Thunderbird General settings page showing the Config Editor button.">
+                  <figcaption class="caption">In General, scroll down to Config Editor.</figcaption>
+                </figure>
               </div>
             </div>
           </article>
@@ -555,13 +456,10 @@
                 <li>Make sure it is set to <strong>false</strong>.</li>
                 <li>If it is <strong>true</strong>, double-click the row to change it to <strong>false</strong>.</li>
               </ul>
-              <div class="mini-shot" aria-hidden="true">
-                <div class="mini-bar">Advanced Preferences</div>
-                <div class="mini-content">
-                  <div class="fake-field">xpinstall.signatures.required</div>
-                  <div class="fake-row"><span>xpinstall.signatures.required</span><strong>false</strong></div>
-                </div>
-              </div>
+              <figure class="screenshot wide">
+                <img src="./assets/xpinstall-signatures-required.png" alt="Thunderbird Advanced Preferences showing xpinstall.signatures.required set to false.">
+                <figcaption class="caption">This value must show <strong>false</strong>.</figcaption>
+              </figure>
             </div>
           </article>
 
@@ -575,20 +473,15 @@
                 <li>Choose <strong>Install Add-on From File...</strong>.</li>
                 <li>Select the XPI file you downloaded.</li>
               </ul>
-              <div class="mini-grid" aria-hidden="true">
-                <div class="mini-shot">
-                  <div class="mini-bar">Tools</div>
-                  <div class="mini-content">
-                    <div class="fake-menu">Add-ons and Themes</div>
-                  </div>
-                </div>
-                <div class="mini-shot">
-                  <div class="mini-bar">Add-ons</div>
-                  <div class="mini-content">
-                    <div class="fake-field">Settings gear</div>
-                    <div class="fake-menu">Install Add-on From File...</div>
-                  </div>
-                </div>
+              <div class="screenshot-grid">
+                <figure class="screenshot">
+                  <img src="./assets/tools-addons-themes.png" alt="Thunderbird Tools menu with Add-ons and Themes highlighted.">
+                  <figcaption class="caption">Open Add-ons and Themes.</figcaption>
+                </figure>
+                <figure class="screenshot">
+                  <img src="./assets/install-addon-from-file.png" alt="Add-ons settings gear menu with Install Add-on From File highlighted.">
+                  <figcaption class="caption">Use the gear menu to install the XPI file.</figcaption>
+                </figure>
               </div>
             </div>
           </article>
@@ -598,13 +491,10 @@
             <div class="step-body">
               <h3>Activate OmniReply</h3>
               <p>Open OmniReply settings, paste your V4 API key, and click <strong>Test connection</strong>. The status should show <strong>Ready</strong>.</p>
-              <div class="mini-shot" aria-hidden="true">
-                <div class="mini-bar">Activate OmniReply</div>
-                <div class="mini-content">
-                  <div class="fake-field">••••••••••••••••••••••••••</div>
-                  <div class="fake-button">Test connection</div>
-                </div>
-              </div>
+              <figure class="screenshot wide">
+                <img src="./assets/activate-api-key.png" alt="OmniReply settings page with V4 API key field and Test connection button.">
+                <figcaption class="caption">Paste the V4 API key and test the connection.</figcaption>
+              </figure>
             </div>
           </article>
 
@@ -613,15 +503,10 @@
             <div class="step-body">
               <h3>Add your Cover Playground links</h3>
               <p>Paste your personal Cover Playground link for each recognized imprint account. OmniReply uses these links when a reply should include your submission link.</p>
-              <div class="mini-shot" aria-hidden="true">
-                <div class="mini-bar">Personal Cover Playground Links</div>
-                <div class="mini-content">
-                  <div class="fake-field">Lambert Academic Publishing</div>
-                  <div class="fake-field">my.lap-publishing.com/cover_playgrounds/...</div>
-                  <div class="fake-field">Editions Universitaires Europeennes</div>
-                  <div class="fake-field">my.editions-ue.com/cover_playgrounds...</div>
-                </div>
-              </div>
+              <figure class="screenshot wide">
+                <img src="./assets/cover-playground-links.png" alt="OmniReply Personal Cover Playground Links settings with link fields for imprint accounts.">
+                <figcaption class="caption">Add one personal link for each recognized imprint account.</figcaption>
+              </figure>
             </div>
           </article>
 
@@ -630,14 +515,10 @@
             <div class="step-body">
               <h3>Optional: adjust voice settings</h3>
               <p>You can edit the default voice settings manually. Learning from your sent folder is optional and can be done later.</p>
-              <div class="mini-shot" aria-hidden="true">
-                <div class="mini-bar">Voice settings</div>
-                <div class="mini-content">
-                  <div class="fake-field">Default voice: concise, casual, Authentic</div>
-                  <div class="fake-button">Analyze sent folder</div>
-                  <div class="fake-field">Edit default voice settings</div>
-                </div>
-              </div>
+              <figure class="screenshot wide">
+                <img src="./assets/voice-settings.png" alt="OmniReply Voice settings showing optional sent-folder analysis and default voice settings.">
+                <figcaption class="caption">Voice setup is optional. You can leave it for later.</figcaption>
+              </figure>
             </div>
           </article>
         </section>
