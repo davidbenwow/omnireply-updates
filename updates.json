@@ -3,9 +3,9 @@
     "omnireply@omniscriptum.com": {
       "updates": [
         {
-          "version": "4.0.96",
-          "update_link": "https://davidbenwow.github.io/omnireply-updates/omnireply-4.0.96.xpi",
-          "update_hash": "sha256:5abf62eeb80b1ae223622d70e0621561654906dde4f9de704ad30929318c038f",
+          "version": "4.0.97",
+          "update_link": "https://davidbenwow.github.io/omnireply-updates/omnireply-4.0.97.xpi",
+          "update_hash": "sha256:7b4f3ee5bf3812247cab4aa4096b2ccbb9c94562d4fca72b571ca709009b48ea",
           "applications": {
             "gecko": {
               "strict_min_version": "140.0"
