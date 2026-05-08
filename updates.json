@@ -5,7 +5,7 @@
         {
           "version": "4.0.120",
           "update_link": "https://davidbenwow.github.io/omnireply-updates/omnireply-4.0.120.xpi",
-          "update_hash": "sha256:cca75f1d6a70828343571efd287031c492709d814b2d697f11e9a74521696637",
+          "update_hash": "sha256:81a1716a72d30f1821eb6980f12a21a49bf96400d909e2e5974733bd829517ae",
           "applications": {
             "gecko": {
               "strict_min_version": "140.0"
